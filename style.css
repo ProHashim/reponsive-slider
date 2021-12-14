@@ -90,7 +90,7 @@ hr {
 }
 
 .box {
-    background-image: url("http://www.nftsmag.net/wp-content/uploads/2021/12/french-flag-gc5d92e1a1_1920.jpg");
+    background-image: url("http://www.nftsmag.net/wp-content/uploads/2021/12/flag-gb4ba43db0_1920.jpg");
 
     background-size: 100%;
     width: 100%;
@@ -148,6 +148,7 @@ hr {
 
 .box:hover .button {
     z-index: 3;
+    width: 110px;
     bottom: 82px;
     left: 510px;
     background: #298aaf;
@@ -156,10 +157,10 @@ hr {
 .box .pink {
     position: absolute;
     transition: all 0.7s 0s cubic-bezier(0.815, 0.005, 0.18, 1.005);
-    width: 80px;
+    width: 110px;
     border-radius: 100px;
     height: 62px;
-    z-index: 2;
+    z-index: 3;
     background: black;
     color: white;
     left: 160px;
@@ -342,7 +343,7 @@ hr {
         left: 10px;
     }
     .box:hover .cube_inner div.page_left{
-            display: none;
+            /* display: none; */
     }
     .holder{
 
@@ -356,15 +357,56 @@ hr {
     }
     .box:hover .cube {
         left: 210px;
+        transform:rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(.9) translateY(50px) translateX(-30px)
     }
     .box:hover .cube_inner div{
-        height: 200px;
+        max-height: 200px;
         bottom: 0;
     }
+    .box:hover .cube .cube_front {
+        transform: translateZ(5px) rotatey(-180deg);
+    }
+
+    .box:hover .cube .page_left {
+        transform: translateZ(5px) rotatey(180deg);
+    }
+
 }
     
 @media screen and (max-width: 480px) {
+    .box{
+        /* min-height: 550px; */
+    }
     .button{
         left: 60%!important;;
     }
+    .box:hover .cube_inner div.page_left{
+        max-width: 160px;
+    }
+     .box:hover .cube_inner div.page_right {
+        max-width: 160px;
+    }
+    .box:hover .cube_inner div.cube_right {
+        max-width: 150px;
+    }
+    .box:hover .cube_inner div{
+        max-width: 150px;
+    }
+    .box:hover .cube_inner div{
+        background-color: transparent;
+    }
+        .box:hover .cube{
+    transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(.9) translateY(50px) translateX(-70px);
+
+        }
+         .box:hover .pink{
+            left: calc(100% - 115px);
+            top: 142px;
+            background-color: #09d4fb;
+                color: #000;
+                padding: 0;
+                height: min-content;
+                transform: rotate(30deg) !important;
+        }
+        
 }
